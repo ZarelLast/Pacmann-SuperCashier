@@ -2,9 +2,9 @@
 ---
 Modul Transaksi
 ---
-## Contoh Penggunaan Modul Class Transcation
+## Contoh Penggunaan Modul
 ### Tambah Barang
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_1 = Transaction()
 
@@ -20,7 +20,7 @@ transaksi_1.check_order()
 transaksi_1.test_case_output(transaksi_1.keranjang)
 ```
 ### Update Barang
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_2 = Transaction()
 
@@ -43,7 +43,7 @@ transaksi_2.update_item_qty(id_item=3, update_jumlah=10)
 transaksi_2.test_case_output(transaksi_2.keranjang)
 ```
 ### Delete Barang
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_3 = Transaction()
 
@@ -61,7 +61,7 @@ transaksi_3.test_case_output(transaksi_3.keranjang)
 ```
 ### Check Order
 #### Check tanpa error
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_4 = Transaction()
 
@@ -78,7 +78,7 @@ transaksi_4.check_order()
 transaksi_4.test_case_output(transaksi_4.keranjang)
 ```
 #### Check jika error
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_5 = Transaction()
 
@@ -95,7 +95,7 @@ transaksi_5.check_order()
 transaksi_5.test_case_output(transaksi_5.keranjang)
 ```
 ### Reset Transaksi
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_6 = Transaction()
 
@@ -114,7 +114,7 @@ transaksi_6.reset_transaction()
 transaksi_6.check_order()
 ```
 ### Total Harga
-```
+```python
 # inisialsisasi instance transaksi
 transaksi_7 = Transaction()
 
