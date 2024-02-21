@@ -130,7 +130,7 @@ transaksi_7.test_case_output(transaksi_7.keranjang)
 transaksi_7.total_price()
 ```
 ### Menu Transaksi
-```
+```python
 transaksi = Transaction()
 transaksi.menu()
 ```
