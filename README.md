@@ -1,20 +1,17 @@
 # Dokumentasi
 ---
-## Rangkuman
-
----
-### Latar Belakang
+## Requirements & Objectives
+**Latar Belakang**
 Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer bisa membeli barang sesuai kebutuhan mereka di tempat yang jauh dari supermarket, misalnya saat di kota lain
-
-### Penjelasan Requirements & Objectives
-#### Requirement:
+<br/><br/>
+**Requirement:**
 - **add_item([ <nama_item>, <jumlah_item>, <harga_per_item> ])** <br/>
-&nbsp;Method yang digunakan untuk menambahkan item berdasarkan parameter berikut:
+Method yang digunakan untuk menambahkan item berdasarkan parameter berikut:
   - **<nama_item>:** attribute nama barang yang akan dibeli oleh customer
   - **<jumlah_item>:** attribute jumlah barang yang akan dibeli oleh customer
   - **<harga_per_item>:** attribute harga barang per satuan
 - **update_item_name(<id_item>, <update_nama_item>)** <br/>
-&nbsp;Method yang digunakan untuk mengupdate item berdasarkan parameter berikut:
+Method yang digunakan untuk mengupdate item berdasarkan parameter berikut:
 	- **<id_item>:** attribute id barang yang akan diubah oleh customer
 	- **<update_nama_item>:** attribute nama barang yang baru
 - **update_item_qty(<id_item>, <update_jumlah_item>)**
@@ -24,28 +21,31 @@ Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer
 	- **<id_item>**: attribute id barang yang akan diubah oleh customer
 	-	**<update_harga_item>**: attribute harga barang yang baru
 - **delete_item(<id_item>)** <br/>
-&nbsp;Method yang digunakan untuk menghapus salah satu atau beberapa item barang dari list keranjang barang yang akan dibeli berdasarkan id barang
+Method yang digunakan untuk menghapus salah satu atau beberapa item barang dari list keranjang barang yang akan dibeli berdasarkan id barang
   - **<id_item>:** attribute id barang yang akan dihapus oleh customer
 - **reset_transaction()** <br/>
-&nbsp;Method yang digunakan untuk menghapus semua barang belanjaan di dalam list keranjang yang tidak akan dibeli
+Method yang digunakan untuk menghapus semua barang belanjaan di dalam list keranjang yang tidak akan dibeli
 - **check_order()** <br/>
-&nbsp;Method yang digunakan untuk mengecek barang yang telah diinputkan kedalam keranjang, apakah sudah sesuai dengan keinginan atau tidak. Ditampilkan dalam bentuk tabel.
+Method yang digunakan untuk mengecek barang yang telah diinputkan kedalam keranjang, apakah sudah sesuai dengan keinginan atau tidak. Ditampilkan dalam bentuk tabel.
 - **total_price()** <br/>
-&nbsp;Method yang digunakan untuk menampilkan harga total keseluruhan item barang yang dibeli beserta diskonnya. Nilai yang ditampilkan adalah total harga yang telah dikenakan diskon.
-
-#### Objektif:
+Method yang digunakan untuk menampilkan harga total keseluruhan item barang yang dibeli beserta diskonnya. Nilai yang ditampilkan adalah total harga yang telah dikenakan diskon.
+<br/><br/>
+**Objektif:**
 Membuat aplikasi python kasir self-service sehingga customer/pelanggan bisa menginput barang sendiri sesuai dengan yang mereka inginkan
 
-### Penjelasan Flowchart
-![alt text](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/flowchart.png?raw=true)
+## Flowchart
+![Flowchart](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/flowchart.png?raw=true)
 
-### Conclusion
+## Conclusion
+- Dengan Class yang sudah dibuat 
+- Untuk future work, seandainya saya memiliki waktu lebih dan SDM lebih mungkin saya akan mengembangkan modul ini menjadi aplikasi yang memiliki tampilan GUI dan terkoneksi dengan Database
 
 ---
 ## Demonstrasi
 
 ---
 ### Tambah Barang
+- Code
 ```python
 # inisialsisasi instance transaksi
 transaksi_1 = Transaction()
@@ -61,6 +61,8 @@ transaksi_1.check_order()
 # {'nama_item': [jumlah, harga]}
 transaksi_1.test_case_output(transaksi_1.keranjang)
 ```
+- Output
+![Add Item](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/output/add_item.png?raw=true)
 ### Update Barang
 ```python
 # inisialsisasi instance transaksi
