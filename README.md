@@ -246,7 +246,119 @@ def total_price(self):
 Membuat aplikasi python kasir self-service sehingga customer/pelanggan bisa menginput barang sendiri sesuai dengan yang mereka inginkan
 
 ## Flowchart
-![Flowchart](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/flowchart.png?raw=true)
+![Flowchart](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/flowchart.png?raw=true) \
+**Alur Flowchart:**
+1. Mulai
+2. Inisialisasi objek `Transaction()` sebagai `transaksi_1`
+3. Output Menu (berisikan Opsi) yang ada di method `menu()`
+4. Input Opsi (0-7)
+5. Jika Input Opsi == 0 (cek keranjang) maka:
+	1) Pada opsi ini akan diarahkan ke method `check_order()`
+	2) Kemudian akan tampil tabel keranjang belanja
+	3) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	4) Selanjutnya akan kembali ke `menu()`
+6. Jika Input Opsi == 1 (add item) maka:
+	1) Input `nama_item` berupa `String`
+	2) Input `qty_item` berupa `Int`
+	3) Input `harga_item` berupa `Int`
+	4) Selanjutnya akan diproses pada method `add_item()`
+	5) Kemudian akan diproses apakah ada error saat input pada method `check_order()`
+	6) Kemudian akan tampil tabel keranjang belanja
+	7) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	8) Selanjutnya akan kembali ke `menu()`
+7. Jika Input Opsi == 2 (update nama item) maka:
+	1) Input `id_item` berupa `Int`
+	2) Input `nama_baru_item` berupa `String`
+	3) Selanjutnya akan diproses pada method `update_item_name()`
+	4) Kemudian akan diproses apakah ada error saat input pada method `check_order()`
+	5) Kemudian akan tampil tabel keranjang belanja
+	6) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	7) Selanjutnya akan kembali ke `menu()`
+8. Jika Input Opsi == 3 (update qty item) maka:
+	1) Input `id_item` berupa `Int`
+	2) Input `qty_baru_item` berupa `Int`
+	4) Selanjutnya akan diproses pada method `update_item_qty()`
+	5) Kemudian akan diproses apakah ada error saat input pada method `check_order()`
+	6) Kemudian akan tampil tabel keranjang belanja
+	7) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	8) Selanjutnya akan kembali ke `menu()`
+9. Jika Input Opsi == 4 (update price item) maka:
+	1) Input `id_item` berupa `Int`
+	2) Input `harga_baru_item` berupa `Int`
+	3) Selanjutnya akan diproses pada method `update_item_harga()`
+	4) Kemudian akan diproses apakah ada error saat input pada method `check_order()`
+	5) Kemudian akan tampil tabel keranjang belanja
+	6) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	7) Selanjutnya akan kembali ke `menu()`
+10. Jika Input Opsi == 5 (delete item) maka:
+	1) Input `id_item` berupa `Int`
+	2) Selanjutnya akan diproses pada method `delete_item()`
+	3) Kemudian akan diproses apakah ada error saat input pada method `check_order()`
+	4) Kemudian akan tampil tabel keranjang belanja
+	5) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	6) Selanjutnya akan kembali ke `menu()`
+11. Jika Input Opsi == 6 (checkout) maka:
+	1) Pada opsi ini akan diarahkan ke method `check_order()`
+	2) Kemudian akan tampil tabel keranjang belanja
+	3) Selanjutnya akan dicek apakah ada error pada saat `check_order()` tadi
+	- Jika ada maka:
+		1. Akan muncul output pesan error
+		2. Kemudian kembali ke input opsi menu
+	- Jika tidak maka:
+		1. Akan muncul output "pemesanan sudah benar"
+		2. Kemudian akan memproses method `total_price()`
+		3. Lalu akan muncul output dari hasil perhitungan `total_price()`
+	4) Selanjutnya akan muncul opsi "checkout?"
+	-	jika ya maka:
+		1. Akan menjalankan method `reset_transaction()`
+		2. Kemudian program akan berhenti/selesai
+	- Jika tidak:
+		1. Kembali ke input opsi menu
+12. Jika Input Opsi == 7 (batal belanja) maka:
+	1) Akan menjalankan method `reset_transaction()`
+	2) Kemudian program akan berhenti/selesai
 
 ## Conclusion & Future Works
 - Dengan Class serta Method yang sudah dibuat
