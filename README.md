@@ -38,7 +38,7 @@ Membuat aplikasi python kasir self-service sehingga customer/pelanggan bisa meng
 
 ## Conclusion
 - Dengan Class yang sudah dibuat 
-- Untuk future work, seandainya saya memiliki waktu lebih dan SDM lebih mungkin saya akan mengembangkan modul ini menjadi aplikasi yang memiliki tampilan GUI dan terkoneksi dengan Database
+- Untuk future work, seandainya saya memiliki waktu lebih dan SDM lebih mungkin saya akan mengembangkan modul ini menjadi aplikasi yang memiliki tampilan GUI, terkoneksi dengan Database dan menambahkan class khusus untuk menampilkan multiple error agar user tau error dibagian mana saja (karena saat ini error hanya ditampilkan 1 dan secara urut berdasarkan error pertama)
 
 ---
 ## Demonstrasi
@@ -62,8 +62,9 @@ transaksi_1.check_order()
 transaksi_1.test_case_output(transaksi_1.keranjang)
 ```
 - Output
-![Add Item](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/output/add_item.png?raw=true)
+![Add Item](output/add_item.JPG)
 ### Update Barang
+- Code
 ```python
 # inisialsisasi instance transaksi
 transaksi_2 = Transaction()
@@ -86,7 +87,10 @@ transaksi_2.update_item_qty(id_item=3, update_jumlah=10)
 # {'nama_item': [jumlah, harga]}
 transaksi_2.test_case_output(transaksi_2.keranjang)
 ```
+- Output
+![Update Item](output/update_item.JPG)
 ### Delete Barang
+- Code
 ```python
 # inisialsisasi instance transaksi
 transaksi_3 = Transaction()
@@ -103,8 +107,10 @@ transaksi_3.delete_item(3)
 # {'nama_item': [jumlah, harga]}
 transaksi_3.test_case_output(transaksi_3.keranjang)
 ```
+- Output
+![Delete Item](output/del_item.JPG)
 ### Check Order
-#### Check tanpa error
+- Code (Check tanpa error)
 ```python
 # inisialsisasi instance transaksi
 transaksi_4 = Transaction()
@@ -121,7 +127,9 @@ transaksi_4.check_order()
 # {'nama_item': [jumlah, harga]}
 transaksi_4.test_case_output(transaksi_4.keranjang)
 ```
-#### Check jika error
+- Output
+![Check Order](output/check_order.JPG)
+- Code (Check jika error)
 ```python
 # inisialsisasi instance transaksi
 transaksi_5 = Transaction()
@@ -138,7 +146,10 @@ transaksi_5.check_order()
 # {'nama_item': [jumlah, harga]}
 transaksi_5.test_case_output(transaksi_5.keranjang)
 ```
+- Output
+![Check Order Error](output/check_order2.JPG)
 ### Reset Transaksi
+- Code
 ```python
 # inisialsisasi instance transaksi
 transaksi_6 = Transaction()
@@ -157,7 +168,10 @@ transaksi_6.reset_transaction()
 # check order
 transaksi_6.check_order()
 ```
+- Output
+![Reset Transaksi](output/reset_item.JPG)
 ### Total Harga
+- Code
 ```python
 # inisialsisasi instance transaksi
 transaksi_7 = Transaction()
@@ -173,8 +187,13 @@ transaksi_7.test_case_output(transaksi_7.keranjang)
 # hitung total belanja
 transaksi_7.total_price()
 ```
+- Output
+![Total Price](output/total_price.JPG)
 ### Menu Transaksi
+- Code
 ```python
 transaksi = Transaction()
 transaksi.menu()
 ```
+- Output
+![Menu](output/menu.JPG)
