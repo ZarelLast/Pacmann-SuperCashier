@@ -22,43 +22,6 @@ Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer
   - **`<harga_per_item>`:** attribute harga barang per satuan 
   - Code 
 ```python
-def add_items(self, data):
-	'''
-	Menambahkan item ke keranjang
-
-	Parameter :
-	-----------
-	data : list/dict
-		Data item berisikan nama, jumlah dan harga barang
-	'''
-	if len(self.keranjang) == 0:
-		id_barang = len(self.keranjang) + 1
-	else:
-		for barang in self.keranjang:
-			id_barang = barang['id'] + 1
-
-	try:
-		self.keranjang.append({
-			"id": id_barang,
-			"nama" : data[0],
-			"jumlah" : data[1],
-			"harga" : data[2],
-			"total" : data[1]*data[2]
-		});
-
-	except:
-		self.keranjang.append({
-			"id": id_barang,
-			"nama" : data[0],
-			"jumlah" : data[1],
-			"harga" : data[2],
-			"total" : 0
-		});
-  
-    self.check_order()
-    self.test_case_output(self.keranjang)
-```
-```python
   def add_items(self, data):
     '''
       Menambahkan item ke keranjang
@@ -101,8 +64,8 @@ def add_items(self, data):
 	- **`<id_item>`:** attribute id barang yang akan diubah oleh customer
 	- **`<update_nama_item>`:** attribute nama barang yang baru
 	- Code
-	```python
-	def update_item_name(self, id_item, update_nama):
+```python
+  def update_item_name(self, id_item, update_nama):
     '''
       Memperbaiki dan mengupdate nama item
 
@@ -126,13 +89,13 @@ def add_items(self, data):
 
     self.check_order()
     self.test_case_output(self.keranjang)
-	```
+```
 - **update_item_qty(`<id_item>`, `<update_jumlah_item>`)**
 	- **`<id_item>`**: attribute id barang yang akan diubah oleh customer
 	- **`<update_jumlah_item>`**: attribute jumlah barang yang baru
 	- Code
-	```python
-	def update_item_qty(self, id_item, update_jumlah):
+```python
+  def update_item_qty(self, id_item, update_jumlah):
     '''
       Memperbaiki dan mengupdate jumlah item
 
@@ -156,13 +119,13 @@ def add_items(self, data):
 
     self.check_order()
     self.test_case_output(self.keranjang)
-	```
+```
 - **update_item_price(`<id_item>`, `<update_harga_item>`)**
 	- **`<id_item>`:** attribute id barang yang akan diubah oleh customer
 	-	**`<update_harga_item>`:** attribute harga barang yang baru
 	-	Code
-	```python
-	def update_item_price(self, id_item, update_harga):
+```python
+  def update_item_price(self, id_item, update_harga):
     '''
       Memperbaiki dan mengupdate harga item
 
@@ -186,13 +149,13 @@ def add_items(self, data):
 
     self.check_order()
     self.test_case_output(self.keranjang)
-	```
+```
 - **delete_item(`<id_item>`)** <br/>
 	Method yang digunakan untuk menghapus salah satu atau beberapa item barang dari list keranjang barang yang akan dibeli berdasarkan id barang
   - **`<id_item>`:** attribute id barang yang akan dihapus oleh customer
   - Code
-	```python
-	def delete_item(self, id_item):
+```python
+  def delete_item(self, id_item):
     '''
       Menghapus salah satu item dari keranjang
 
@@ -208,7 +171,7 @@ def add_items(self, data):
 
     self.check_order()
     self.test_case_output(self.keranjang)
-	```
+```
 - **reset_transaction()** <br/>
 Method yang digunakan untuk menghapus semua barang belanjaan di dalam list keranjang yang tidak akan dibeli
 ```python
