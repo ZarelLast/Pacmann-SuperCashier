@@ -6,30 +6,240 @@ Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer
 <br/><br/>
 
 **Requirement:** <br/>
-- **add_item([ <nama_item>, <jumlah_item>, <harga_per_item> ])** <br/>
-Method yang digunakan untuk menambahkan item berdasarkan parameter berikut:
-  - **<nama_item>:** attribute nama barang yang akan dibeli oleh customer
-  - **<jumlah_item>:** attribute jumlah barang yang akan dibeli oleh customer
-  - **<harga_per_item>:** attribute harga barang per satuan
-- **update_item_name(<id_item>, <update_nama_item>)** <br/>
-Method yang digunakan untuk mengupdate item berdasarkan parameter berikut:
-	- **<id_item>:** attribute id barang yang akan diubah oleh customer
-	- **<update_nama_item>:** attribute nama barang yang baru
-- **update_item_qty(<id_item>, <update_jumlah_item>)**
-	- **<id_item>**: attribute id barang yang akan diubah oleh customer
-	- **<update_jumlah_item>**: attribute jumlah barang yang baru
-- **update_item_price(<id_item>, <update_harga_item>)**
-	- **<id_item>**: attribute id barang yang akan diubah oleh customer
-	-	**<update_harga_item>**: attribute harga barang yang baru
-- **delete_item(<id_item>)** <br/>
-Method yang digunakan untuk menghapus salah satu atau beberapa item barang dari list keranjang barang yang akan dibeli berdasarkan id barang
-  - **<id_item>:** attribute id barang yang akan dihapus oleh customer
+**1. Tools:**
+- Google Colab
+
+**2. Library:**
+- tabulate
+- os
+
+**3. Method:**
+- **add_item([ `<nama_item>`, `<jumlah_item>`, `<harga_per_item>` ])** <br/>
+
+	Method yang digunakan untuk menambahkan item berdasarkan parameter berikut:
+  - **`<nama_item>`:** attribute nama barang yang akan dibeli oleh customer
+  - **`<jumlah_item>`:** attribute jumlah barang yang akan dibeli oleh customer
+  - **`<harga_per_item>`:** attribute harga barang per satuan 
+  - Code 
+	```python
+	def add_items(self, data):
+    '''
+      Menambahkan item ke keranjang
+
+      Parameter :
+      -----------
+      data : list/dict
+        Data item berisikan nama, jumlah dan harga barang
+
+    '''
+    if len(self.keranjang) == 0:
+      id_barang = len(self.keranjang) + 1
+    else:
+      for barang in self.keranjang:
+        id_barang = barang['id'] + 1
+
+    try:
+      self.keranjang.append({
+        "id": id_barang,
+        "nama" : data[0],
+        "jumlah" : data[1],
+        "harga" : data[2],
+        "total" : data[1]*data[2]
+      })
+
+    except:
+      self.keranjang.append({
+        "id": id_barang,
+        "nama" : data[0],
+        "jumlah" : data[1],
+        "harga" : data[2],
+        "total" : 0
+      })
+
+    self.check_order()
+    self.test_case_output(self.keranjang)
+	```
+- **update_item_name(`<id_item>`, `<update_nama_item>`)** <br/>
+	Method yang digunakan untuk mengupdate item berdasarkan parameter berikut:
+	- **`<id_item>`:** attribute id barang yang akan diubah oleh customer
+	- **`<update_nama_item>`:** attribute nama barang yang baru
+	- Code
+	```python
+	def update_item_name(self, id_item, update_nama):
+    '''
+      Memperbaiki dan mengupdate nama item
+
+      Parameter :
+      ----------
+      id_item : int
+        ID item berdasarkan urutan pemesanan
+      update_nama : str
+        Nama item baru yang akan diberikan
+
+    '''
+    for barang in self.keranjang:
+      if barang['id'] == id_item:
+        barang.update({
+            'id': barang['id'],
+            'nama': update_nama,
+            'jumlah': barang['jumlah'],
+            'harga': barang['harga'],
+            'total': barang['total']
+          })
+
+    self.check_order()
+    self.test_case_output(self.keranjang)
+	```
+- **update_item_qty(`<id_item>`, `<update_jumlah_item>`)**
+	- **`<id_item>`**: attribute id barang yang akan diubah oleh customer
+	- **`<update_jumlah_item>`**: attribute jumlah barang yang baru
+	- Code
+	```python
+	def update_item_qty(self, id_item, update_jumlah):
+    '''
+      Memperbaiki dan mengupdate jumlah item
+
+      Parameter :
+      ----------
+      id_item : int
+        ID item berdasarkan urutan pemesanan
+      update_jumlah : str
+        Jumlah item baru yang akan diberikan
+
+    '''
+    for barang in self.keranjang:
+      if barang['id'] == id_item:
+        barang.update({
+            'id': barang['id'],
+            'nama': barang['nama'],
+            'jumlah': update_jumlah,
+            'harga': barang['harga'],
+            'total': update_jumlah*barang['harga']
+          })
+
+    self.check_order()
+    self.test_case_output(self.keranjang)
+	```
+- **update_item_price(`<id_item>`, `<update_harga_item>`)**
+	- **`<id_item>`:** attribute id barang yang akan diubah oleh customer
+	-	**`<update_harga_item>`:** attribute harga barang yang baru
+	-	Code
+	```python
+	def update_item_price(self, id_item, update_harga):
+    '''
+      Memperbaiki dan mengupdate harga item
+
+      Parameter :
+      ----------
+      id_item : int
+        ID item berdasarkan urutan pemesanan
+      update_harga : str
+        Harga item baru yang akan diberikan
+
+    '''
+    for barang in self.keranjang:
+      if barang['id'] == id_item:
+        barang.update({
+            'id': barang['id'],
+            'nama': barang['nama'],
+            'jumlah': barang['jumlah'],
+            'harga': update_harga,
+            'total': barang['jumlah']*update_harga
+          })
+
+    self.check_order()
+    self.test_case_output(self.keranjang)
+	```
+- **delete_item(`<id_item>`)** <br/>
+	Method yang digunakan untuk menghapus salah satu atau beberapa item barang dari list keranjang barang yang akan dibeli berdasarkan id barang
+  - **`<id_item>`:** attribute id barang yang akan dihapus oleh customer
+  - Code
+	```python
+	def delete_item(self, id_item):
+    '''
+      Menghapus salah satu item dari keranjang
+
+      Parameter :
+      ----------
+      id_item : int
+        ID item yang akan dihapus
+
+    '''
+    for index, barang in enumerate(self.keranjang):
+      if barang['id'] == id_item:
+        self.keranjang.pop(index)
+
+    self.check_order()
+    self.test_case_output(self.keranjang)
+	```
 - **reset_transaction()** <br/>
 Method yang digunakan untuk menghapus semua barang belanjaan di dalam list keranjang yang tidak akan dibeli
+```python
+def reset_transaction(self):
+    ''' Menghapus seluruh item dari keranjang '''
+    self.keranjang = []
+    print("keranjang telah dikosongkan")
+```
 - **check_order()** <br/>
 Method yang digunakan untuk mengecek barang yang telah diinputkan kedalam keranjang, apakah sudah sesuai dengan keinginan atau tidak. Ditampilkan dalam bentuk tabel.
+```python
+def check_order(self):
+    '''
+      Mengecek item dan kesalahan yang terdapat dalam keranjang
+
+    '''
+    header = ["No.", "Nama Barang", "Jumlah Barang", "Harga Satuan", "Jumlah Harga"]
+    table = []
+    for barang in self.keranjang:
+      table.append([
+          barang["id"],
+          barang["nama"],
+          barang["jumlah"],
+          barang["harga"],
+          barang["total"]
+        ])
+    print(tabulate(table, headers = header, tablefmt = "github"))
+
+    try:
+      for barang in self.keranjang:
+        if len(barang["nama"]) == 0:
+          raise ValueError(f"Barang ID - {barang['id']}: Nama tidak sesuai")
+        if type(barang["jumlah"]) != int:
+          raise ValueError(f"Barang ID - {barang['id']}: Jumlah Barang bukan angka")
+        if type(barang["harga"]) != int:
+          raise ValueError(f"Barang ID - {barang['id']}: Harga bukan angka")
+
+    except ValueError as e:
+      print(e)
+
+    self.total_price()
+```
 - **total_price()** <br/>
 Method yang digunakan untuk menampilkan harga total keseluruhan item barang yang dibeli beserta diskonnya. Nilai yang ditampilkan adalah total harga yang telah dikenakan diskon.
+```python
+def total_price(self):
+    '''
+    Menampilkan harga keseluruhan item dalam keranjang
+    beserta diskon dan harga setelah diskon
+    '''
+    try:
+      total_harga = 0
+      for barang in self.keranjang:
+        total_harga += barang["total"]
+      if total_harga > 500_000:
+        total_harga = total_harga - (total_harga * 0.1)
+        print("Selamat! Anda mendapatkan diskon sebesar 10%")
+      elif total_harga > 300_000:
+        total_harga = total_harga - (total_harga * 0.08)
+        print("Selamat! Anda mendapatkan diskon sebesar 8%")
+      elif total_harga > 200_000:
+        total_harga = total_harga - (total_harga * 0.05)
+        print("Selamat! Anda mendapatkan diskon sebesar 5%")
+      print(f"\nTotal harga yang harus dibayar adalah Rp.{total_harga:,.0f}")
+
+    except TypeError:
+      print(TypeError('PESANAN TIDAK SESUAI, Silahkan di cek kembali'))
+```
 <br/><br/>
 
 **Objektif:** <br/>
@@ -38,8 +248,8 @@ Membuat aplikasi python kasir self-service sehingga customer/pelanggan bisa meng
 ## Flowchart
 ![Flowchart](https://github.com/ZarelLast/Pacmann-SuperCashier/blob/main/flowchart.png?raw=true)
 
-## Conclusion
-- Dengan Class yang sudah dibuat 
+## Conclusion & Future Works
+- Dengan Class serta Method yang sudah dibuat
 - Untuk future work, seandainya saya memiliki waktu lebih dan SDM lebih mungkin saya akan mengembangkan modul ini menjadi aplikasi yang memiliki tampilan GUI, terkoneksi dengan Database dan menambahkan class khusus untuk menampilkan multiple error agar user tau error dibagian mana saja (karena saat ini error hanya ditampilkan 1 dan secara urut berdasarkan error pertama)
 
 ---
