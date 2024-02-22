@@ -63,7 +63,7 @@ transaksi_1.check_order()
 # {'nama_item': [jumlah, harga]}
 transaksi_1.test_case_output(transaksi_1.keranjang)
 ```
-- Output
+- Output  <br/>
 ![Add Item](output/add_item.JPG)
 ### Update Barang
 - Code
@@ -89,7 +89,7 @@ transaksi_2.update_item_qty(id_item=3, update_jumlah=10)
 # {'nama_item': [jumlah, harga]}
 transaksi_2.test_case_output(transaksi_2.keranjang)
 ```
-- Output
+- Output  <br/>
 ![Update Item](output/update_item.JPG)
 ### Delete Barang
 - Code
@@ -109,7 +109,7 @@ transaksi_3.delete_item(3)
 # {'nama_item': [jumlah, harga]}
 transaksi_3.test_case_output(transaksi_3.keranjang)
 ```
-- Output
+- Output  <br/>
 ![Delete Item](output/del_item.JPG)
 ### Check Order
 - Code (Check tanpa error)
@@ -129,7 +129,7 @@ transaksi_4.check_order()
 # {'nama_item': [jumlah, harga]}
 transaksi_4.test_case_output(transaksi_4.keranjang)
 ```
-- Output
+- Output  <br/>
 ![Check Order](output/check_order.JPG)
 - Code (Check jika error)
 ```python
@@ -148,7 +148,7 @@ transaksi_5.check_order()
 # {'nama_item': [jumlah, harga]}
 transaksi_5.test_case_output(transaksi_5.keranjang)
 ```
-- Output
+- Output  <br/>
 ![Check Order Error](output/check_order2.JPG)
 ### Reset Transaksi
 - Code
@@ -170,7 +170,7 @@ transaksi_6.reset_transaction()
 # check order
 transaksi_6.check_order()
 ```
-- Output
+- Output  <br/>
 ![Reset Transaksi](output/reset_item.JPG)
 ### Total Harga
 - Code
@@ -189,7 +189,7 @@ transaksi_7.test_case_output(transaksi_7.keranjang)
 # hitung total belanja
 transaksi_7.total_price()
 ```
-- Output
+- Output  <br/>
 ![Total Price](output/total_price.JPG)
 ### Menu Transaksi
 - Code
@@ -197,5 +197,5 @@ transaksi_7.total_price()
 transaksi = Transaction()
 transaksi.menu()
 ```
-- Output
+- Output  <br/>
 ![Menu](output/menu.JPG)
