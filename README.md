@@ -21,8 +21,45 @@ Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer
   - **`<jumlah_item>`:** attribute jumlah barang yang akan dibeli oleh customer
   - **`<harga_per_item>`:** attribute harga barang per satuan 
   - Code 
-	```python
-	def add_items(self, data):
+```python
+def add_items(self, data):
+	'''
+	Menambahkan item ke keranjang
+
+	Parameter :
+	-----------
+	data : list/dict
+		Data item berisikan nama, jumlah dan harga barang
+	'''
+	if len(self.keranjang) == 0:
+		id_barang = len(self.keranjang) + 1
+	else:
+		for barang in self.keranjang:
+			id_barang = barang['id'] + 1
+
+	try:
+		self.keranjang.append({
+			"id": id_barang,
+			"nama" : data[0],
+			"jumlah" : data[1],
+			"harga" : data[2],
+			"total" : data[1]*data[2]
+		});
+
+	except:
+		self.keranjang.append({
+			"id": id_barang,
+			"nama" : data[0],
+			"jumlah" : data[1],
+			"harga" : data[2],
+			"total" : 0
+		});
+  
+    self.check_order()
+    self.test_case_output(self.keranjang)
+```
+```python
+  def add_items(self, data):
     '''
       Menambahkan item ke keranjang
 
@@ -58,7 +95,7 @@ Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer
 
     self.check_order()
     self.test_case_output(self.keranjang)
-	```
+```
 - **update_item_name(`<id_item>`, `<update_nama_item>`)** <br/>
 	Method yang digunakan untuk mengupdate item berdasarkan parameter berikut:
 	- **`<id_item>`:** attribute id barang yang akan diubah oleh customer
