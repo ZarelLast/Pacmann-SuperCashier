@@ -1,10 +1,11 @@
 # Dokumentasi
 ---
 ## Requirements & Objectives
-**Latar Belakang**
-Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer bisa membeli barang sesuai kebutuhan mereka di tempat yang jauh dari supermarket, misalnya saat di kota lain
+**Latar Belakang** <br/>
+Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer bisa membeli barang sesuai kebutuhan mereka di tempat yang jauh dari supermarket, misalnya saat di kota lain.
 <br/><br/>
-**Requirement:**
+
+**Requirement:** <br/>
 - **add_item([ <nama_item>, <jumlah_item>, <harga_per_item> ])** <br/>
 Method yang digunakan untuk menambahkan item berdasarkan parameter berikut:
   - **<nama_item>:** attribute nama barang yang akan dibeli oleh customer
@@ -30,7 +31,8 @@ Method yang digunakan untuk mengecek barang yang telah diinputkan kedalam keranj
 - **total_price()** <br/>
 Method yang digunakan untuk menampilkan harga total keseluruhan item barang yang dibeli beserta diskonnya. Nilai yang ditampilkan adalah total harga yang telah dikenakan diskon.
 <br/><br/>
-**Objektif:**
+
+**Objektif:** <br/>
 Membuat aplikasi python kasir self-service sehingga customer/pelanggan bisa menginput barang sendiri sesuai dengan yang mereka inginkan
 
 ## Flowchart
