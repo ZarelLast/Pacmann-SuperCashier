@@ -7,7 +7,9 @@ Andi ingin menambahkan sistem self-service di supermarket miliknya agar customer
 
 **Requirement:** <br/>
 **1. Tools:**
+- Python
 - Google Colab
+- draw.io
 
 **2. Library:**
 - tabulate
@@ -361,7 +363,7 @@ Membuat aplikasi python kasir self-service sehingga customer/pelanggan bisa meng
 	2) Kemudian program akan berhenti/selesai
 
 ## Conclusion & Future Works
-- Dengan Class serta Method yang sudah dibuat
+- Dengan Class serta Method yang sudah dibuat program self-service ini sudah berjalan sesuai requirements dan objektif yang sudah diberikan oleh client. Customer sudah dapat melakukan tambah barang, update barang, hapus barang dan mengecek total belanjaan.
 - Untuk future work, seandainya saya memiliki waktu lebih dan SDM lebih mungkin saya akan mengembangkan modul ini menjadi aplikasi yang memiliki tampilan GUI, terkoneksi dengan Database dan menambahkan class khusus untuk menampilkan multiple error agar user tau error dibagian mana saja (karena saat ini error hanya ditampilkan 1 dan secara urut berdasarkan error pertama)
 
 ---
